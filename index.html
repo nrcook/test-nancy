@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nancy</title>
+  <link rel="stylesheet" href="css/main.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<body>
+  <nav class="navbar is-fixed-top">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="#top">
+          <img src="images/logos/navbar-logo.png" alt="Nancy">
+        </a>
+        <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </div>
+      <div id="navbarMenuHeroA" class="navbar-menu">
+        <div class="navbar-end">
+          <a class=" navbar-item" href="#who-is-nancy">
+            Who Is Nancy?
+          </a>
+          <a class="navbar-item" href="#installation">
+            Installation
+          </a>
+          <span class="navbar-item">
+            <a class="button is-white is-inverted is-outlined" target="_blank"
+              href="https://github.com/sonatype-nexus-community/nancy">
+              <span class="icon">
+                <i class="fab fa-github"></i>
+              </span>
+              <span>Check it out on Github</span>
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section id="top" class="hero bg-img is-dark is-large is-fullheight-with-navbar">
+    <!-- Hero head: will stick at the top -->
+    <div class="hero-head">
+
+    </div>
+
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <div class="columns is-vcentered">
+          <div class="column">
+            <img class="" src="images/hero-text.svg" alt="Nancy">
+            <!-- <h1 class="title">
+              Nancy
+            </h1>
+            <h2 class="subtitle">
+              Check for vulnerabilities in your Go dependencies
+            </h2> -->
+          </div>
+
+          <div class="column">
+            <img class="hero-logo" src="images/logos/nancy.png" alt="Nancy">
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 id="who-is-nancy" class="title">Who is Nancy?</h2>
+      <h3 class="subtitle">
+        Nancy is a tool to check for vulnerabilities in your Golang dependencies, powered by <a
+          href="https://ossindex.sonatype.org/">Sonatype OSS
+          Index</a> .
+      </h3>
+      <p>To use Nancy, assuming you have a built version of it: </p>
+      <code> ./nancy /path/to/your/Gopkg.lock </code> <br>
+      <code>./nancy /path/to/your/go.sum</code>
+      <p> Nancy currently works for projects that use dep or go mod for dependencies.</p>
+      <p> You can see an example of using nancy in Travis-CI at this intentionally vulnerable repo we made.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <article class="message is-info">
+        <div class="message-header">
+          <p>DISCLAIMER</p>
+        </div>
+        <div class="message-body">
+          A portion of the Go ecosystem doesn't use proper versions, and instead uses a commit hash to resolve your
+          dependency. Dependencies like this will not work with Nancy quite yet, as we don't have a mechanism on <a
+            href="https://ossindex.sonatype.org/">Sonatype OSS
+            Index</a> to lookup vulnerabilities in that manner.
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="title" id="installation">Installation</h2>
+      <p>At current time you have a few options</p> <br>
+      <div>
+        <h3 class="subtitle">
+          Download release binary
+        </h3>
+        <p>Each commit to master creates a new release binary, and if you'd like to skip building from source, you can
+          download a
+          binary similar to:</p>
+        <code>curl https://github.com/sonatype-nexus-community/nancy/releases/download/0.0.4/nancy-linux.amd64-0.0.4 >
+          /path/where/you/want/nancy</code>
+      </div>
+      <div> <br>
+        <h3 class="subtitle">
+          Build from source
+        </h3>
+        <ul>
+          <li></li>Run <code>go get -u github.com/sonatype-nexus-community/nancy</code> </li>
+          <li>Nancy should now be available wherever your <code>GOPATH</code> is set</li>
+          <li> Run <code>dep ensure</code> in the root of the project </li>
+          <li> In the root of the project <code>go test ./...</code> </li>
+          <li> If tests checkout go ahead and run <code>go build</code> go build. </li>
+          <li> Use that binary where ever your heart so desires! </li>
+          <li> For the adventurous, we have go.mod files that enable you to build using go modules.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="title">About Nancy</h2>
+      <h3 class="subtitle">
+        <a href="https://en.wikipedia.org/wiki/Nancy_Drew">Nancy Drew</a> was the first female detective used
+        extensively in literature, and gave women across the world a new hero.
+      </h3>
+      <p>This project is called nancy as like the great detective herself, it looks for problems you might not be aware
+        of, and
+        gives you the information to help put them to an end! </p>
+    </div>
+  </section>
+
+  <footer class="footer has-text-centered">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-8-desktop is-offset-2-desktop">
+          <p>
+            <strong class="has-text-weight-semibold">
+              Nancy
+            </strong>
+          </p>
+          <p>
+            <small>
+              Made by <a href="https://sonatype.com">Sonatype</a>
+            </small>
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script type="text/javascript" src="lib/main.js"></script>
+</body>
+
+</html>
